@@ -14,9 +14,7 @@ const LandingSection = () => (
     alignItems="center"
     isDarkBackground
     backgroundColor="#2A4365"
-  >
-
-  </FullScreenSection>
+  ></FullScreenSection>
 );
 
 export default LandingSection;
