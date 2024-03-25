@@ -7,7 +7,7 @@ import {
   faMedium,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
-import { Box, HStack, IconButton } from "@chakra-ui/react";
+import { Box, HStack, IconButton, Button } from "@chakra-ui/react";
 
 const socials = [
   {
@@ -46,11 +46,12 @@ const Header = () => {
 
   return (
     <Box
-      position="fixed"
+      position="sticky"
       top={0}
       left={0}
       right={0}
       translateY={0}
+      zIndex="sticky"
       transitionProperty="transform"
       transitionDuration=".3s"
       transitionTimingFunction="ease-in-out"
@@ -86,11 +87,11 @@ const Header = () => {
               </Button>
               <Button
                 variant="ghost"
-                onClick={handleClick("contact")}
+                onClick={handleClick("contactme")}
                 colorScheme="blue"
               >
-                Contact
-              </Button>{" "}
+                Contact Me
+              </Button>
             </HStack>
           </nav>
         </HStack>
