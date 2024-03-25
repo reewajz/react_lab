@@ -1,19 +1,19 @@
 import React from "react";
 import FullScreenSection from "./FullScreenSection";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 
 const projects = [
   {
     title: "React Space",
     description:
-      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
+      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware",
     getImageSrc: () => require("../images/photo1.jpg"),
   },
   {
     title: "React Infinite Scroll",
     description:
-      "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
+      "A scrollable bottom sheet with virtualization support, native animations at 60 FPS and fully implemented in JS land 🔥️",
     getImageSrc: () => require("../images/photo2.jpg"),
   },
   {
