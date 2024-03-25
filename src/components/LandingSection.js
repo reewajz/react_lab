@@ -14,7 +14,18 @@ const LandingSection = () => (
     alignItems="center"
     isDarkBackground
     backgroundColor="#2A4365"
-  ></FullScreenSection>
+  >
+    <VStack spacing={4}>
+      <Avatar
+        size="xl"
+        name="User Avatar"
+        src="https://example.com/avatar.jpg"
+      />
+      <Heading size="lg" color="white">
+        Hello, I am Reewaj
+      </Heading>
+    </VStack>
+  </FullScreenSection>
 );
 
 export default LandingSection;
