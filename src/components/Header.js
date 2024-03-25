@@ -7,7 +7,7 @@ import {
   faMedium,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, IconButton } from "@chakra-ui/react";
 
 const socials = [
   {
@@ -63,7 +63,18 @@ const Header = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <nav>{/* Add social media links based on the `socials` data */}</nav>
+          <nav>
+            <HStack spacing={4}>
+              {socials.map((social) => (
+                <IconButton
+                  key={social.icon.iconName}
+                  aria-label={social.icon.iconName}
+                  icon={<FontAwesomeIcon icon={social.icon} />}
+                  onClick={() => window.open(social.url, "_blank")}
+                />
+              ))}
+            </HStack>
+          </nav>
           <nav>
             <HStack spacing={8}>
               {/* Add links to Projects and Contact me section */}

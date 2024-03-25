@@ -28,7 +28,7 @@ const CardComponent = ({ title, description, imageSrc }) => {
       <Divider />
       <CardFooter>
         <Button variant="ghost" colorScheme="blue" onClick={onClickHandler}>
-          > see more..
+          see more..
         </Button>
       </CardFooter>
     </Card>
