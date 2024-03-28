@@ -58,7 +58,7 @@ const LandingSection = () => {
                   <option value="openSource">
                     Open source consultancy session
                   </option>
-                  <option value="other">Other</option>
+                  <option value="other">Others</option>
                 </Select>
               </FormControl>
               <FormControl isInvalid={false}>
