@@ -20,6 +20,7 @@ import { useAlertContext } from "../context/alertContext";
 
 const LandingSection = () => {
   const toast = useToast();
+  const { isLoading, response, submit } = useSubmit();
 
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("Name is required"),
@@ -38,15 +39,17 @@ const LandingSection = () => {
       comment: "",
     },
     validationSchema: validationSchema,
-    onSubmit: (values, { setSubmitting }) => {
-      toast({
-        title: "Form Submitted!",
-        description: "Your message has been sent.",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-      });
-      setSubmitting(false);
+    onSubmit: async (values, { setSubmitting }) => {
+      await submit("/api/submit", values);
+      console.log("resp::", await response);
+
+      // toast({
+      //   title: "Form Submitted!",
+      //   description: "Your message has been sent.",
+      //   status: "success",
+      //   duration: 5000,
+      //   isClosable: true,
+      // });
     },
   });
 
