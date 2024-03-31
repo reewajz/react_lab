@@ -20,6 +20,7 @@ import { useAlertContext } from "../context/alertContext";
 
 const LandingSection = () => {
   const toast = useToast();
+  const { onOpen } = useAlertContext();
   const { isLoading, response, submit } = useSubmit();
 
   const validationSchema = Yup.object().shape({
@@ -40,8 +41,15 @@ const LandingSection = () => {
     },
     validationSchema: validationSchema,
     onSubmit: async (values, { setSubmitting }) => {
-      await submit("/api/submit", values);
-      console.log("resp::", await response);
+      try {
+        await submit("/api/submit", values);
+        onOpen(
+          "success",
+          `Thanks for your submission ${values.firstName}, we will get back to you shortly!`
+        );
+      } catch (error) {
+        onOpen("error", "Something went wrong, please try again later!");
+      }
 
       // toast({
       //   title: "Form Submitted!",
