@@ -11,7 +11,6 @@ import {
   Select,
   Textarea,
   VStack,
-  useToast,
 } from "@chakra-ui/react";
 import * as Yup from "yup";
 import FullScreenSection from "./FullScreenSection";
@@ -19,7 +18,6 @@ import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
 
 const LandingSection = () => {
-  const toast = useToast();
   const { onOpen } = useAlertContext();
   const { isLoading, response, submit } = useSubmit();
 
@@ -50,14 +48,6 @@ const LandingSection = () => {
       } catch (error) {
         onOpen("error", "Something went wrong, please try again later!");
       }
-
-      // toast({
-      //   title: "Form Submitted!",
-      //   description: "Your message has been sent.",
-      //   status: "success",
-      //   duration: 5000,
-      //   isClosable: true,
-      // });
     },
   });
 
