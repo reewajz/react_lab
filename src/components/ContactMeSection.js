@@ -40,7 +40,7 @@ const LandingSection = () => {
     validationSchema: validationSchema,
     onSubmit: async (values, { setSubmitting }) => {
       try {
-        await submit("/api/submit", values);
+        await submit("/submit", values);
         onOpen(
           "success",
           `Thanks for your submission ${values.firstName}, we will get back to you shortly!`
