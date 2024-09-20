@@ -73,6 +73,11 @@ uploads/*
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
 
 ### Linux ###
 *~
